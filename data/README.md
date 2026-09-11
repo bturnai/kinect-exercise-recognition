@@ -46,7 +46,14 @@ single-person clips from the Kaggle dataset
 larger folder (284 windows, 6 classes), so their results cannot be reproduced from the
 files above.
 
-## Open questions
+## Participants and limitations
 
-- Who appears in each recording? Subject IDs were not stored.
-- All files here contain Kinect depth values, so they appear to be Kinect recordings rather than Kaggle clips. Not yet confirmed.
+- The Kinect recordings show three people: the author and two friends, who agreed to publication.
+- Subject IDs were not stored, so it is unknown which recording belongs to whom.
+  Evaluation can be grouped by recording but not by person.
+- All files here contain Kinect depth values, so they appear to be Kinect recordings rather than Kaggle clips.
+- The origin of `extra_recordings/` (who, when) is unknown.
+
+## License
+
+Released under the repository's [MIT License](../LICENSE).
