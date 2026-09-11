@@ -123,13 +123,24 @@ kinect-exercise-recognition/
 │   └── python/
 │       ├── server.py             # OpenPose kulcspont-szerver (TCP :1111), az osztályozót is elindítja
 │       └── classifier_server.py  # LSTM osztályozó (TCP :2222)
-├── models/lstm/                  # A futó rendszer által betöltött LSTM (TensorFlow SavedModel)
+├── models/
+│   ├── lstm/                     # A futó rendszer által betöltött LSTM (TensorFlow SavedModel)
+│   └── lstm_reeval.keras         # Az újramérésben mind a 41 felvételen tanított LSTM
 ├── notebooks/
-│   ├── lstm.ipynb                # LSTM tanítás és kiértékelés
+│   ├── lstm.ipynb                # Szakdolgozati notebookok, változatlanul
 │   ├── random_forest.ipynb
-│   └── cnn_2d.ipynb
+│   ├── cnn_2d.ipynb
+│   ├── svm.ipynb
+│   ├── reeval_lstm.ipynb         # Újramérés: felvételenkénti 5-szörös keresztvalidáció × 3
+│   ├── reeval_random_forest.ipynb
+│   ├── reeval_cnn_2d.ipynb
+│   ├── reeval_svm.ipynb
+│   └── reeval_summary.ipynb      # Összesítés és értelmezés
+├── src/reeval_common.py          # Az újramérés közös adatbetöltése, splitjei és metrikái
+├── results/reeval/               # Újramérési eredmények (JSON, ábrák), leírás: results/reeval/README.md
 ├── data/                         # Megmaradt kulcspont-adatok, leírás: data/README.md
-├── requirements.txt
+├── requirements.txt              # Szakdolgozati környezet (Python 3.7)
+├── requirements-reeval.txt       # Újramérési környezet (Python 3.11)
 └── README.md
 ```
 

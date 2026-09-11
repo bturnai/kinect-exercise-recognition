@@ -46,6 +46,11 @@ single-person clips from the Kaggle dataset
 larger folder (284 windows, 6 classes), so their results cannot be reproduced from the
 files above.
 
+`notebooks/reeval_*.ipynb` re-evaluate all four models on `keypoint_sequences.csv`
+(121 windows) with a recording-level split. See [`results/reeval/README.md`](../results/reeval/README.md).
+`extra_recordings/` is not used there: the frames were stitched together from 25-frame windows,
+so displacements across window boundaries would be artefacts.
+
 ## Participants and limitations
 
 - The Kinect recordings show three people: the author and two friends, who agreed to publication.

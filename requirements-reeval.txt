@@ -1,0 +1,12 @@
+# Environment used for notebooks/reeval_*.ipynb (Python 3.11, macOS arm64, CPU).
+# The thesis environment is in requirements.txt.
+ipykernel==7.3.0
+keras==3.15.1
+matplotlib==3.11.1
+nbconvert==7.17.1
+nbformat==5.11.1
+numpy==2.4.6
+pandas==3.0.5
+scikit-learn==1.9.1
+seaborn==0.13.2
+tensorflow==2.21.0
