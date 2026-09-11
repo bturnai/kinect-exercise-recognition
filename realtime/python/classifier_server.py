@@ -1,4 +1,5 @@
 from math import e
+import os
 import socket
 import struct
 import threading
@@ -13,8 +14,9 @@ from sklearn.decomposition import PCA
 # !pip3 install --upgrade joblib numpy
 
 
-# A modell betöltése
-model=load_model('LSTM_model')
+# A modell betöltése (models/lstm a repó gyökerében)
+MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'models', 'lstm')
+model=load_model(MODEL_DIR)
 
 port= 2222
 

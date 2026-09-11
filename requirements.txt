@@ -1,0 +1,15 @@
+# Thesis environment: Windows, Python 3.7.
+# Pinned versions are taken from the pip output recorded in the original notebooks;
+# joblib and opencv-python versions were not recorded.
+# OpenPose's Python bindings (pyopenpose) are built separately:
+# https://github.com/CMU-Perceptual-Computing-Lab/openpose
+numpy==1.21.6
+pandas==1.1.5
+scipy==1.7.3
+scikit-learn==1.0.2
+matplotlib==3.5.3
+seaborn==0.12.2
+tensorflow==2.11.0
+keras==2.11.0
+joblib
+opencv-python

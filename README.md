@@ -117,20 +117,23 @@ Az osztályozók ugyanolyan vektorsorozatot látnak bal és jobb oldali állásb
 ## Repository felépítése
 
 ```
-ProjektMunka/
-├── WPF_Project/
-│   ├── MainWindow.xaml          # UI, Kinect stream megjelenítése
-│   ├── FrameManager.cs          # Képkocka kezelés, TCP kliens
-│   ├── DataAnalyzer.cs          # Vektorképzés, 25-kockás ablakozás
-│   └── Analyzers/               # Gyakorlatonkénti osztályok
-├── Python_Project/
-│   ├── openpose_server.py       # Kulcspont detektálás OpenPose segítségével(TCP :1111)
-│   ├── classifier_server.py     # LSTM osztályozó (TCP :2222)
-│   └── train_model.ipynb        # ← Modell betanítás + összehasonlítás itt
+kinect-exercise-recognition/
+├── realtime/
+│   ├── DepthBasics-WPF/          # C# WPF kliens: Kinect stream, képkockakezelés, vektorképzés, gyakorlatelemzők
+│   └── python/
+│       ├── server.py             # OpenPose kulcspont-szerver (TCP :1111), az osztályozót is elindítja
+│       └── classifier_server.py  # LSTM osztályozó (TCP :2222)
+├── models/lstm/                  # A futó rendszer által betöltött LSTM (TensorFlow SavedModel)
+├── notebooks/
+│   ├── lstm.ipynb                # LSTM tanítás és kiértékelés
+│   ├── random_forest.ipynb
+│   └── cnn_2d.ipynb
+├── data/                         # Megmaradt kulcspont-adatok, leírás: data/README.md
+├── requirements.txt
 └── README.md
 ```
 
-> 📓 A `train_model.ipynb` notebook önállóan is megnyitható és futtatható – tartalmazza a teljes modell-összehasonlítást confusion matrixszal és learning curve-ökkel.
+> A szakdolgozat eredeti, változatlan repója: [bturnai/ProjektMunka](https://github.com/bturnai/ProjektMunka)
 
 ---
 
@@ -141,11 +144,11 @@ ProjektMunka/
 > - **Microsoft Kinect v1 szenzor** (2010, Xbox periféria) – ma már nehezen hozzáférhető
 > - **Kompatibilis processzor** – egyes könyvtárak (pl. OpenPose) csak adott CPU/GPU paraméterek esetén futnak megfelelően
 >
-> **Az ML-pipeline és a modell-összehasonlítás a `train_model.ipynb` notebookban ezek nélkül is tanulmányozható.**
+> **A modellek tanítása és kiértékelése a `notebooks/` mappában, a kimenetekkel együtt ezek nélkül is áttekinthető.**
 
 ```bash
-# Python függőségek
-pip install tensorflow keras scikit-learn pandas numpy opencv-python
+# Python függőségek (a szakdolgozati környezet: Python 3.7)
+pip install -r requirements.txt
 
 # OpenPose telepítése (külön szükséges):
 # https://github.com/CMU-Perceptual-Computing-Lab/openpose

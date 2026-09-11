@@ -18,7 +18,7 @@ from io import StringIO
 import threading
 
 from threading import Thread
-from ClassifierModell import start_server as start_classifier
+from classifier_server import start_server as start_classifier
 
 
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
