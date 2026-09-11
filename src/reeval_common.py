@@ -34,8 +34,9 @@ SEEDS = (0, 1, 2)
 CLASS_MERGE = {"squat_front": "squat", "squat_side": "squat"}
 CLASSES = ["bent-over_rows", "biceps", "latheral_raises", "rdl", "shoulder_press", "squat"]
 
-# Numbers from the original notebooks: one split, a larger dataset that no longer exists.
-THESIS_RESULTS = {"LSTM": 0.925, "Random Forest": 0.881, "2D CNN": 0.687, "SVM": 0.96}
+# Summary table of the thesis document: one 80/20 split, 67 test windows (the SVM classified
+# single frames), on a larger dataset that no longer exists.
+THESIS_RESULTS = {"LSTM": 0.93, "Random Forest": 0.84, "2D CNN": 0.66, "SVM": 0.63}
 
 # Chart tokens (light surface), sequential blue ramp for magnitude.
 SURFACE, INK, INK_SECONDARY, INK_MUTED, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#898781", "#e1e0d9"

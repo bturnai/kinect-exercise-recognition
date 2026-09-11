@@ -34,14 +34,16 @@ A rendszer tervezése során az volt a kérdés: lehetséges-e versenyképes pon
 
 ## Eredmények
 
-Négy ML-modellt hasonlítottam össze azonos adatkészleten, precision / recall / F1 metrikákkal:
+Négy ML-modellt hasonlítottam össze 80/20-as tanító–teszt felosztással (a szakdolgozat összesítő táblázata, 67 tesztablak):
 
-| Modell | Teszt pontosság | Megjegyzés |
-|---|:---:|---|
-| **LSTM** ✅ | **~93%** | Időbeli sorozatokhoz ideális – végső modell |
-| 2D CNN | 66% | Kis adathalmazon erősen túltanul |
-| SVM | **~94%**|  |
-| Random Forest | 88% | Robusztus, de statikus jellemzőkre optimalizált |
+| Modell | Teszt pontosság | F1 | Megjegyzés |
+|---|:---:|:---:|---|
+| **LSTM** ✅ | **93%** | **0.91** | Időbeli sorozatokhoz ideális – végső modell |
+| Random Forest | 84% | 0.84 | Robusztus, de statikus jellemzőkre optimalizált |
+| 2D CNN | 66% | 0.62 | Kis adathalmazon erősen túltanul |
+| SVM | 63% | 0.63 | Képkockánként osztályoz, nem kezeli az időbeli változást |
+
+> Újramérés a megmaradt 41 felvételen, felvételenkénti keresztvalidációval: [results/reeval/README.md](results/reeval/README.md)
 
 **Kontextus az irodalomban:**
 
@@ -49,7 +51,7 @@ Négy ML-modellt hasonlítottam össze azonos adatkészleten, precision / recall
 |---|---|:---:|
 | Sejera et al. | Kinect V2 + SVM | 90.54% |
 | Hussain et al. | LSTM + viselhetőszenzor | 82% |
-| **Ez a projekt** | **Kinect V1 + LSTM** | **~93%** |
+| **Ez a projekt** | **Kinect V1 + LSTM** | **93%** |
 
 > A rendszer a Kinect v1 korlátaival (kisebb pontosság az alsó testnél, zajosabb mélységi adat) együtt is versenyképes eredményt ért el.
 

@@ -17,14 +17,18 @@ Output of `notebooks/reeval_*.ipynb` (run on 2026-09-11). The thesis notebooks
 
 Window accuracy, mean ± 1 SD across splits. Majority-class baseline: 27%.
 
-| Model | Re-evaluation | Thesis (one split, lost data) |
+| Model | Re-evaluation | Thesis (80/20 split, lost data) |
 |---|---|---|
-| LSTM | 77.3% ± 10.9% | 92.5% |
-| 2D CNN | 71.0% ± 11.2% | 68.7% |
-| Random Forest | 61.2% ± 7.9% | 88.1% |
-| SVM, single frames, recording-level split (B) | 58.7% ± 11.4% | – |
+| LSTM | 77.3% ± 10.9% | 93% |
+| 2D CNN | 71.0% ± 11.2% | 66% |
+| Random Forest | 61.2% ± 7.9% | 84% |
+| SVM, single frames, recording-level split (B) | 58.7% ± 11.4% | 63%* |
 | SVM, windows, recording-level split (C) | 38.4% ± 5.1% | – |
-| SVM, single frames, random frame split (A, leaky) | 97.6% ± 0.8% | 96% |
+| SVM, single frames, random frame split (A, leaky) | 97.6% ± 0.8% | – |
+
+Thesis numbers are from the summary table of the thesis document. \*The thesis SVM also
+classified single frames, but on displacement vectors instead of raw positions. The 96% that
+variant A reproduces comes from the separate `notebooks/svm.ipynb`, not from the thesis.
 
 The findings and limitations are in `notebooks/reeval_summary.ipynb`.
 
