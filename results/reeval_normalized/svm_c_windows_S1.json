@@ -1,0 +1,389 @@
+{
+  "model": "SVM",
+  "variant": "S1: missing-joint interpolation",
+  "split": "recording-level 5-fold \u00d7 3",
+  "features": "displacement windows, flattened (1,250)",
+  "params": "grid search, grouped inner folds",
+  "classes": [
+    "bent-over_rows",
+    "biceps",
+    "latheral_raises",
+    "rdl",
+    "shoulder_press",
+    "squat"
+  ],
+  "n_samples": 121,
+  "n_recordings": 41,
+  "n_splits_run": 15,
+  "summary": {
+    "accuracy_mean": 0.4786134777728981,
+    "accuracy_std": 0.0760503468642394,
+    "macro_f1_mean": 0.3506576002448035,
+    "macro_f1_std": 0.10597154603741767,
+    "recording_accuracy_mean": 0.47222222222222227,
+    "recording_accuracy_std": 0.06556631603912026,
+    "baseline_accuracy_mean": 0.2714088713219148,
+    "baseline_accuracy_std": 0.03767020055823243
+  },
+  "confusion_matrix": [
+    [
+      21,
+      8,
+      2,
+      0,
+      5,
+      18
+    ],
+    [
+      0,
+      34,
+      0,
+      0,
+      20,
+      0
+    ],
+    [
+      1,
+      33,
+      4,
+      0,
+      13,
+      0
+    ],
+    [
+      4,
+      0,
+      1,
+      8,
+      2,
+      36
+    ],
+    [
+      2,
+      37,
+      1,
+      0,
+      14,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      2,
+      2,
+      92
+    ]
+  ],
+  "folds": [
+    {
+      "seed": 0,
+      "fold": 0,
+      "n_train": 96,
+      "n_test": 25,
+      "test_recordings": [
+        "bent-over_rows_2",
+        "bent-over_rows_4",
+        "biceps_3",
+        "latheral_raises_5",
+        "rdl_5",
+        "shoulder_press_5",
+        "squat_front_5",
+        "squat_side_3",
+        "squat_side_4"
+      ],
+      "accuracy": 0.48,
+      "macro_f1": 0.20629370629370627,
+      "recording_accuracy": 0.4444444444444444,
+      "baseline_accuracy": 0.36
+    },
+    {
+      "seed": 0,
+      "fold": 1,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_1",
+        "biceps_0",
+        "biceps_4",
+        "latheral_raises_2",
+        "rdl_4",
+        "shoulder_press_4",
+        "squat_front_1",
+        "squat_side_2"
+      ],
+      "accuracy": 0.5,
+      "macro_f1": 0.4166666666666667,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 0,
+      "fold": 2,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_3",
+        "biceps_1",
+        "latheral_raises_0",
+        "latheral_raises_3",
+        "rdl_1",
+        "shoulder_press_0",
+        "squat_front_0",
+        "squat_side_5"
+      ],
+      "accuracy": 0.5,
+      "macro_f1": 0.37142857142857144,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 0,
+      "fold": 3,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_5",
+        "biceps_2",
+        "latheral_raises_4",
+        "rdl_2",
+        "rdl_3",
+        "shoulder_press_2",
+        "squat_front_2",
+        "squat_front_4"
+      ],
+      "accuracy": 0.4583333333333333,
+      "macro_f1": 0.3131313131313131,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 0,
+      "fold": 4,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_0",
+        "biceps_5",
+        "latheral_raises_1",
+        "rdl_0",
+        "shoulder_press_1",
+        "shoulder_press_3",
+        "squat_front_3",
+        "squat_side_1"
+      ],
+      "accuracy": 0.5,
+      "macro_f1": 0.3666666666666667,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 1,
+      "fold": 0,
+      "n_train": 94,
+      "n_test": 27,
+      "test_recordings": [
+        "bent-over_rows_1",
+        "bent-over_rows_3",
+        "biceps_2",
+        "latheral_raises_1",
+        "rdl_3",
+        "shoulder_press_2",
+        "squat_front_4",
+        "squat_side_1",
+        "squat_side_5"
+      ],
+      "accuracy": 0.4444444444444444,
+      "macro_f1": 0.36035353535353537,
+      "recording_accuracy": 0.4444444444444444,
+      "baseline_accuracy": 0.3333333333333333
+    },
+    {
+      "seed": 1,
+      "fold": 1,
+      "n_train": 99,
+      "n_test": 22,
+      "test_recordings": [
+        "bent-over_rows_0",
+        "biceps_1",
+        "biceps_5",
+        "latheral_raises_5",
+        "rdl_5",
+        "shoulder_press_0",
+        "squat_front_1",
+        "squat_side_4"
+      ],
+      "accuracy": 0.5909090909090909,
+      "macro_f1": 0.4847374847374848,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.2727272727272727
+    },
+    {
+      "seed": 1,
+      "fold": 2,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_4",
+        "biceps_4",
+        "latheral_raises_0",
+        "latheral_raises_3",
+        "rdl_4",
+        "shoulder_press_5",
+        "squat_front_2",
+        "squat_front_5"
+      ],
+      "accuracy": 0.4166666666666667,
+      "macro_f1": 0.3688552188552188,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 1,
+      "fold": 3,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_2",
+        "biceps_0",
+        "latheral_raises_4",
+        "rdl_0",
+        "rdl_2",
+        "shoulder_press_3",
+        "squat_side_2",
+        "squat_side_3"
+      ],
+      "accuracy": 0.4166666666666667,
+      "macro_f1": 0.2694805194805195,
+      "recording_accuracy": 0.375,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 1,
+      "fold": 4,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_5",
+        "biceps_3",
+        "latheral_raises_2",
+        "rdl_1",
+        "shoulder_press_1",
+        "shoulder_press_4",
+        "squat_front_0",
+        "squat_front_3"
+      ],
+      "accuracy": 0.5,
+      "macro_f1": 0.4166666666666667,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 2,
+      "fold": 0,
+      "n_train": 94,
+      "n_test": 27,
+      "test_recordings": [
+        "bent-over_rows_1",
+        "bent-over_rows_5",
+        "biceps_5",
+        "latheral_raises_3",
+        "rdl_1",
+        "shoulder_press_3",
+        "squat_front_5",
+        "squat_side_1",
+        "squat_side_2"
+      ],
+      "accuracy": 0.37037037037037035,
+      "macro_f1": 0.21835839598997495,
+      "recording_accuracy": 0.4444444444444444,
+      "baseline_accuracy": 0.3333333333333333
+    },
+    {
+      "seed": 2,
+      "fold": 1,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_3",
+        "biceps_3",
+        "biceps_4",
+        "latheral_raises_1",
+        "rdl_0",
+        "shoulder_press_5",
+        "squat_side_3",
+        "squat_side_5"
+      ],
+      "accuracy": 0.5416666666666666,
+      "macro_f1": 0.4595238095238095,
+      "recording_accuracy": 0.5,
+      "baseline_accuracy": 0.25
+    },
+    {
+      "seed": 2,
+      "fold": 2,
+      "n_train": 98,
+      "n_test": 23,
+      "test_recordings": [
+        "bent-over_rows_2",
+        "biceps_2",
+        "latheral_raises_2",
+        "latheral_raises_5",
+        "rdl_3",
+        "shoulder_press_4",
+        "squat_front_2",
+        "squat_side_4"
+      ],
+      "accuracy": 0.391304347826087,
+      "macro_f1": 0.18803418803418803,
+      "recording_accuracy": 0.375,
+      "baseline_accuracy": 0.2608695652173913
+    },
+    {
+      "seed": 2,
+      "fold": 3,
+      "n_train": 98,
+      "n_test": 23,
+      "test_recordings": [
+        "bent-over_rows_0",
+        "biceps_1",
+        "latheral_raises_4",
+        "rdl_4",
+        "rdl_5",
+        "shoulder_press_1",
+        "squat_front_0",
+        "squat_front_1"
+      ],
+      "accuracy": 0.6521739130434783,
+      "macro_f1": 0.5472582972582972,
+      "recording_accuracy": 0.625,
+      "baseline_accuracy": 0.2608695652173913
+    },
+    {
+      "seed": 2,
+      "fold": 4,
+      "n_train": 97,
+      "n_test": 24,
+      "test_recordings": [
+        "bent-over_rows_4",
+        "biceps_0",
+        "latheral_raises_0",
+        "rdl_2",
+        "shoulder_press_0",
+        "shoulder_press_2",
+        "squat_front_3",
+        "squat_front_4"
+      ],
+      "accuracy": 0.4166666666666667,
+      "macro_f1": 0.27240896358543415,
+      "recording_accuracy": 0.375,
+      "baseline_accuracy": 0.25
+    }
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sklearn": "1.9.1"
+  },
+  "run_date": "2026-09-11"
+}

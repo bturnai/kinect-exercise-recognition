@@ -137,9 +137,15 @@ kinect-exercise-recognition/
 │   ├── reeval_random_forest.ipynb
 │   ├── reeval_cnn_2d.ipynb
 │   ├── reeval_svm.ipynb
-│   └── reeval_summary.ipynb      # Összesítés és értelmezés
-├── src/reeval_common.py          # Az újramérés közös adatbetöltése, splitjei és metrikái
-├── results/reeval/               # Újramérési eredmények (JSON, ábrák), leírás: results/reeval/README.md
+│   ├── reeval_summary.ipynb      # Összesítés és értelmezés
+│   ├── reeval_normalized_*.ipynb # Ugyanez normalizált jellemzőkkel (interpolálás, törzshossz, standardizálás)
+│   └── reeval_normalized_summary.ipynb
+├── src/
+│   ├── reeval_common.py          # Az újramérés közös adatbetöltése, splitjei és metrikái
+│   └── reeval_normalized.py      # A normalizálási lépések (S1–S3)
+├── results/
+│   ├── reeval/                   # Újramérés a szakdolgozati jellemzőkkel, leírás: results/reeval/README.md
+│   └── reeval_normalized/        # Újramérés normalizált jellemzőkkel, leírás: results/reeval_normalized/README.md
 ├── data/                         # Megmaradt kulcspont-adatok, leírás: data/README.md
 ├── requirements.txt              # Szakdolgozati környezet (Python 3.7)
 ├── requirements-reeval.txt       # Újramérési környezet (Python 3.11)
