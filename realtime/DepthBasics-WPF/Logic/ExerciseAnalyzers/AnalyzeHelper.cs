@@ -167,31 +167,29 @@ namespace Microsoft.Samples.Kinect.DepthBasics.ExerciseAnalyzers
         }
 
 
+        /// <summary>
+        /// Decides whether the user stands with the left or the right side towards the camera,
+        /// from the average horizontal offset between the neck and the mid-hip.
+        /// Frames where either joint was not detected are skipped.
+        /// </summary>
         public static string DecideSide()
         {
+            double offset = 0;
 
+            foreach (var frame in Video)
+            {
+                JointData neck = frame.GetJoint((int)OpenposeJointType.Neck);
+                JointData midhip = frame.GetJoint((int)OpenposeJointType.MidHip);
 
+                if ((neck.X == 0 && neck.Y == 0) || (midhip.X == 0 && midhip.Y == 0))
+                {
+                    continue;
+                }
 
-            KMeansClassifier km = new KMeansClassifier();
-            return km.DetermineDirection(Video);
+                offset += neck.X - midhip.X;
+            }
 
-
-            //string side;
-            //JointData neck;
-            //JointData midhip;
-
-            //double vectors = 0;
-            //foreach (var frame in Video)
-            //{
-            //    neck = frame.GetJoint((int)OpenposeJointType.Neck);
-            //    midhip = frame.GetJoint((int)OpenposeJointType.MidHip);
-
-            //    vectors += (neck.X - midhip.X);
-            //}
-
-
-           
-            //return vectors>0 ? "left": "right" ;
+            return offset > 0 ? "left" : "right";
         }
     }
 }

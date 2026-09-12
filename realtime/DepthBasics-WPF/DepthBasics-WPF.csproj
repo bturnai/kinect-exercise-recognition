@@ -119,7 +119,6 @@
     <Compile Include="Logic\ExerciseAnalyzers\SquatSideAnalyzer.cs" />
     <Compile Include="Logic\DataAnalyzer.cs" />
     <Compile Include="Logic\FrameManager.cs" />
-    <Compile Include="Logic\KMeansClassifier.cs" />
     <Compile Include="Models\PoseResponse.cs" />
     <Compile Include="Models\ExerciseType.cs" />
     <Compile Include="Models\ImageWithDepth.cs" />
